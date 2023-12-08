@@ -1,0 +1,165 @@
+2023-12-07 17:40:10 — INFO — Running with edr=0.13.1
+2023-12-07 17:40:10 — INFO — Running dbt --log-format json deps --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+2023-12-07 17:40:17 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'deps', '--project-dir', '/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project']' is 3372
+2023-12-07 17:40:17 — INFO — Running with dbt=1.7.3
+2023-12-07 17:40:17 — INFO — Updating lock file in file path: /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project/package-lock.yml
+2023-12-07 17:40:17 — INFO — Installing dbt-labs/dbt_utils
+2023-12-07 17:40:17 — INFO — Installed from version 0.8.6
+2023-12-07 17:40:17 — INFO — Updated version available: 1.1.1
+2023-12-07 17:40:17 — INFO — Installing elementary-data/elementary
+2023-12-07 17:40:17 — INFO — Installed from version 0.13.0
+2023-12-07 17:40:17 — INFO — Up to date!
+2023-12-07 17:40:17 — INFO — 
+2023-12-07 17:40:17 — INFO — Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+2023-12-07 17:40:17 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_latest_invocation", "macro_args": {}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+[31;20m2023-12-07 17:40:19 — ERROR — Unable to get the latest invocation: Failed to run dbt command.
+Encountered an error:
+Runtime Error
+  Could not find profile named 'elementary'[0m
+2023-12-07 17:40:19 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+2023-12-07 17:40:22 — DEBUG — Could not get warehouse info.
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/elementary/clients/dbt/dbt_runner.py", line 82, in _run_command
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.6_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}}', '--project-dir', '/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project']' returned non-zero exit status 2.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/data_monitoring/data_monitoring.py", line 174, in _get_warehouse_info
+    self.internal_dbt_runner.run_operation(
+  File "/opt/homebrew/lib/python3.11/site-packages/elementary/clients/dbt/dbt_runner.py", line 154, in run_operation
+    success, command_output = self._run_command(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/elementary/clients/dbt/dbt_runner.py", line 93, in _run_command
+    raise DbtCommandError(err, command_args, logs=logs)
+elementary.exceptions.exceptions.DbtCommandError: Failed to run dbt command.
+Encountered an error:
+Runtime Error
+  Could not find profile named 'elementary'
+2023-12-07 17:40:22 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_elementary_database_and_schema", "macro_args": {}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+[31;20m2023-12-07 17:40:25 — ERROR — Failed to parse Elementary's database and schema.[0m
+2023-12-07 17:40:25 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_test_results", "macro_args": {"days_back": 7, "invocations_per_test": 720, "disable_passed_test_metrics": false}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+[31;20m2023-12-07 17:40:29 — ERROR — Could not generate the report - Error: Failed to run dbt command.
+Encountered an error:
+Runtime Error
+  Could not find profile named 'elementary'
+Please reach out to our community for help with this issue.[0m
+NoneType: None
+2023-12-07 17:40:54 — INFO — Running with edr=0.13.1
+2023-12-07 17:40:55 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_latest_invocation", "macro_args": {}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project --profiles-dir profiles/athena/
+[31;20m2023-12-07 17:40:58 — ERROR — Unable to get the latest invocation: Failed to run dbt command.
+Encountered an error:
+Runtime Error
+  Could not find profile named 'elementary'[0m
+2023-12-07 17:40:58 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project --profiles-dir profiles/athena/
+2023-12-07 17:41:01 — DEBUG — Could not get warehouse info.
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/elementary/clients/dbt/dbt_runner.py", line 82, in _run_command
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.6_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}}', '--project-dir', '/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project', '--profiles-dir', 'profiles/athena/']' returned non-zero exit status 2.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/data_monitoring/data_monitoring.py", line 174, in _get_warehouse_info
+    self.internal_dbt_runner.run_operation(
+  File "/opt/homebrew/lib/python3.11/site-packages/elementary/clients/dbt/dbt_runner.py", line 154, in run_operation
+    success, command_output = self._run_command(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/elementary/clients/dbt/dbt_runner.py", line 93, in _run_command
+    raise DbtCommandError(err, command_args, logs=logs)
+elementary.exceptions.exceptions.DbtCommandError: Failed to run dbt command.
+Encountered an error:
+Runtime Error
+  Could not find profile named 'elementary'
+2023-12-07 17:41:01 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_elementary_database_and_schema", "macro_args": {}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project --profiles-dir profiles/athena/
+2023-12-07 17:43:29 — INFO — Running with edr=0.13.1
+2023-12-07 17:43:29 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_latest_invocation", "macro_args": {}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+[31;20m2023-12-07 17:43:32 — ERROR — Unable to get the latest invocation: Failed to run dbt command.
+Encountered an error:
+Runtime Error
+  Could not find profile named 'elementary'[0m
+2023-12-07 17:43:32 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+2023-12-07 17:43:35 — DEBUG — Could not get warehouse info.
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/elementary/clients/dbt/dbt_runner.py", line 82, in _run_command
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.6_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}}', '--project-dir', '/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project']' returned non-zero exit status 2.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/data_monitoring/data_monitoring.py", line 174, in _get_warehouse_info
+    self.internal_dbt_runner.run_operation(
+  File "/opt/homebrew/lib/python3.11/site-packages/elementary/clients/dbt/dbt_runner.py", line 154, in run_operation
+    success, command_output = self._run_command(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/elementary/clients/dbt/dbt_runner.py", line 93, in _run_command
+    raise DbtCommandError(err, command_args, logs=logs)
+elementary.exceptions.exceptions.DbtCommandError: Failed to run dbt command.
+Encountered an error:
+Runtime Error
+  Could not find profile named 'elementary'
+2023-12-07 17:43:35 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_elementary_database_and_schema", "macro_args": {}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+2023-12-07 17:45:45 — INFO — Running with edr=0.13.1
+2023-12-07 17:45:45 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_latest_invocation", "macro_args": {}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+2023-12-07 17:45:59 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_latest_invocation", "macro_args": {}}', '--project-dir', '/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project']' is 4248
+2023-12-07 17:45:59 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+2023-12-07 17:46:02 — DEBUG — Could not get warehouse info.
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/elementary/clients/dbt/dbt_runner.py", line 82, in _run_command
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.6_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}}', '--project-dir', '/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project']' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/data_monitoring/data_monitoring.py", line 174, in _get_warehouse_info
+    self.internal_dbt_runner.run_operation(
+  File "/opt/homebrew/lib/python3.11/site-packages/elementary/clients/dbt/dbt_runner.py", line 154, in run_operation
+    success, command_output = self._run_command(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/elementary/clients/dbt/dbt_runner.py", line 93, in _run_command
+    raise DbtCommandError(err, command_args, logs=logs)
+elementary.exceptions.exceptions.DbtCommandError: Failed to run dbt command.
+Encountered an error while running operation: Runtime Error
+  Compilation Error
+    Object of type Undefined is not JSON serializable
+2023-12-07 17:46:02 — INFO — edr (0.13.1) and Elementary's dbt package (0.13.0) are compatible.
+2023-12-07 17:46:02 — DEBUG — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_elementary_database_and_schema", "macro_args": {}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+2023-12-07 17:46:06 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_elementary_database_and_schema", "macro_args": {}}', '--project-dir', '/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project']' is 1917
+2023-12-07 17:46:06 — INFO — Elementary's database and schema: '"awsdatacatalog.dbt_glue_demo_nyc_metrics_elementary"'
+2023-12-07 17:46:06 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_test_results", "macro_args": {"days_back": 7, "invocations_per_test": 720, "disable_passed_test_metrics": false}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+2023-12-07 17:46:20 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_test_results", "macro_args": {"days_back": 7, "invocations_per_test": 720, "disable_passed_test_metrics": false}}', '--project-dir', '/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project']' is 18809
+2023-12-07 17:46:20 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_source_freshness_results", "macro_args": {"days_back": 7, "invocations_per_test": 720}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+2023-12-07 17:46:33 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_source_freshness_results", "macro_args": {"days_back": 7, "invocations_per_test": 720}}', '--project-dir', '/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project']' is 1811
+2023-12-07 17:46:33 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_models", "macro_args": {"exclude_elementary": true}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+2023-12-07 17:46:47 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_models", "macro_args": {"exclude_elementary": true}}', '--project-dir', '/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project']' is 5951
+2023-12-07 17:46:47 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_sources", "macro_args": {}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+2023-12-07 17:46:57 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_sources", "macro_args": {}}', '--project-dir', '/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project']' is 2529
+2023-12-07 17:46:57 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_exposures", "macro_args": {}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+2023-12-07 17:47:13 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_exposures", "macro_args": {}}', '--project-dir', '/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project']' is 1811
+2023-12-07 17:47:13 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_models_runs", "macro_args": {"days_back": 7, "exclude_elementary": true}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+2023-12-07 17:47:25 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_models_runs", "macro_args": {"days_back": 7, "exclude_elementary": true}}', '--project-dir', '/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project']' is 1811
+2023-12-07 17:47:25 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_dbt_models_test_coverage", "macro_args": {}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+2023-12-07 17:47:36 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_dbt_models_test_coverage", "macro_args": {}}', '--project-dir', '/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project']' is 2023
+2023-12-07 17:47:36 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_nodes_depends_on_nodes", "macro_args": {"exclude_elementary": true}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+2023-12-07 17:47:50 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_nodes_depends_on_nodes", "macro_args": {"exclude_elementary": true}}', '--project-dir', '/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project']' is 3411
+2023-12-07 17:47:50 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_models_latest_invocation", "macro_args": {}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+2023-12-07 17:47:59 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_models_latest_invocation", "macro_args": {}}', '--project-dir', '/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project']' is 8907
+2023-12-07 17:47:59 — INFO — Running dbt --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_models_latest_invocations_data", "macro_args": {}} --project-dir /opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project
+2023-12-07 17:48:12 — DEBUG — Result bytes size for command '['dbt', '--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_models_latest_invocations_data", "macro_args": {}}', '--project-dir', '/opt/homebrew/lib/python3.11/site-packages/elementary/monitor/dbt_project']' is 2269
